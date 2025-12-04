@@ -1,8 +1,6 @@
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
 
-        # just get the product of everything before and then the product of everything after and multiply
-
         # Create arrays to store the products of everything left of our numbers and right of our numbers
         left_arr = [0] * len(nums)
         right_arr = [0] * len(nums)
@@ -12,11 +10,14 @@ class Solution:
         left_product = 1
         right_product = 1
 
+        # Keep a second index pointer that iterates backwards from the right side of the array
+        j = len(nums)
+
         # Now iterate through the array, with i being the pointer that moves left
         for i in range (len(nums)):
 
-            # Keep a second index pointer that iterates backwards from the right side of the array
-            j = -i-1
+            # Decrement j backwards
+            j -= 1
 
             # Left array will store the products of everything left of the array, starting with the default multiplier
             left_arr[i] = left_product
