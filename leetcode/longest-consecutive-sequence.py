@@ -32,8 +32,7 @@ class Solution:
         current_difference = 0
         max_difference = 0
         index_list = list(hashmap.values())
-        print(index_list)
-        print(list_set)
+
         if (len(index_list) == 1):
             return len(list_set)
 
